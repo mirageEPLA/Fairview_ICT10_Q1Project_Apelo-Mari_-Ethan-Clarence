@@ -1,27 +1,13 @@
-def create_order():
-    items = {
-        "Americano": Element("americano"),
-        "Spanish Latte": Element("spanish"),
-        "Cold Brew Malt": Element("coldbrew"),
-        "Affogato": Element("affogato"),
-        "Caramel Macchiato": Element("caramel")
-    }
+def generate_sku():
+    category = Element("category").value.strip().upper()[:3]
+    product = Element("product").value.strip().upper().replace(" ", "")[:5]
+    quantity = Element("quantity").value.strip()
 
-    selected = []
-    total = 0
-
-    for name, el in items.items():
-        if el.element.checked:
-            price = int(el.element.value)
-            selected.append(f"{name} — ₱{price}")
-            total += price
-
-    if selected:
-        order_summary = "You ordered:\n" + "\n".join(selected) + f"\n\nTotal: ₱{total}"
+    if category and product and quantity:
+        sku = f"{category}-{product}-{quantity}"
+        Element("output").write(f"Generated SKU: {sku}")
     else:
-        order_summary = "No items selected."
-
-    Element("summary").write(order_summary)
+        Element("output").write("Please fill in all fields.")
     </py-script>
 </body>
 </html>
