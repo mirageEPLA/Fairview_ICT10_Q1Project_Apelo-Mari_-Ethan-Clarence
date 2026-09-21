@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=!, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #ffffff, #f0f0f0);
+            color: #fff;
+        }
+        header {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            padding: 1rem;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            max-width: 500px;
+            margin: 2rem auto;
+            background: #fff;
+            color: #333;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 0.5rem 0;
+        }
+        button {
+            margin-top: 1.5rem;
+            width: 100%;
+            padding: 0.75rem;
+            background: #2575fc;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #6a11cb;
+        }
+        #summary {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>☕ OBMC Entrep Fair Group 1 — Coffee Shop</h1>
+    </header>
+
+    <div class="container">
+        <div class="menu-item">
+            <label><input type="checkbox" id="americano" value="99"> Americano</label>
+            <span>₱99</span>
+        </div>
+        <div class="menu-item">
+            <label><input type="checkbox" id="spanish" value="129"> Spanish Latte</label>
+            <span>₱129</span>
+        </div>
+        <div class="menu-item">
+            <label><input type="checkbox" id="coldbrew" value="189"> Cold Brew Malt</label>
+            <span>₱189</span>
+        </div>
+        <div class="menu-item">
+            <label><input type="checkbox" id="affogato" value="159"> Affogato</label>
+            <span>₱159</span>
+        </div>
+        <div class="menu-item">
+            <label><input type="checkbox" id="caramel" value="129"> Caramel Macchiato</label>
+            <span>₱129</span>
+        </div>
+
+        <button py-click="create_order()">Create Order</button>
+        <div id="summary">Your order summary will appear here.</div>
+    </div>
+
+    
